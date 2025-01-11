@@ -37,11 +37,9 @@ export default (editor, opts = {}) => {
         this.on('change:attributes:type', this.handleHeaderTypeChange);
       },
       handleTextChange(model) {
-          console.log('text changed:', this.getAttributes().content);
-          this.components({ type: 'textnode', content: this.getAttributes().content });
+        this.components({ type: 'textnode', content: this.getAttributes().content });
       },
       handleHeaderTypeChange(model) {
-        console.log('header type changed:', this.getAttributes().header_type);
         this.set('tagName', this.getAttributes().type);
       }
     },
